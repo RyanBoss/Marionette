@@ -1,17 +1,7 @@
-﻿window.PageView = Backbone.View.extend(
-    {
-        el: $('body'),
-        initialize: function() {
-            this.screenView = new window.ScreenView();
-        }
-    });
-window.ScreenView = Backbone.View.extend({
-    el: "#screen",
+﻿var ContentView = Backbone.Marionette.ItemView.extend({
+    template: '#content-template',
     events: {
         'click #button1': 'getNancy'
-    },
-    initialize: function() {
-        this.$el.html("<input type = 'button' id='button1'></input>");
     },
     getNancy: function() {
         $.ajax({
@@ -35,4 +25,4 @@ window.ScreenView = Backbone.View.extend({
             }
         });
     }
-})
+});

@@ -1,9 +1,20 @@
-﻿var ContentView = Backbone.Marionette.ItemView.extend({
+﻿var ScreenView = Backbone.Marionette.Layout.extend({
+    template: '#screen-template'
+});
+
+var ContentView = Backbone.Marionette.Layout.extend({
     template: '#content-template',
     events: {
         'click #button1': 'getNancy'
     },
-    getNancy: function() {
+    initialize: function() {
+        this.addRegion("screen", "#screen");
+    },
+    onRender: function () {
+        var myModel = new Backbone.Model({ foo: "bar" });
+        this.screen.show(new ScreenView({model: myModel}));
+    },
+    getNancy: function () {
         $.ajax({
             url: "services/",
             contentType: 'application/json',
@@ -21,7 +32,7 @@
                         value: data
                     });
                 }
-                $("#screen").html(results[0].value);
+                this.screen.show(new ScreenView({ data: results[0].value }));
             }
         });
     }

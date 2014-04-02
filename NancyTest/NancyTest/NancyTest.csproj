@@ -273,7 +273,9 @@
     <Content Include="Scripts\lib\modernizr-2.6.2.js" />
     <Content Include="Scripts\lib\underscore.js" />
     <Content Include="Scripts\testNancy.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -298,7 +300,9 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Default\index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="services\Web.config" />
+    <Content Include="services\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\styles\" />

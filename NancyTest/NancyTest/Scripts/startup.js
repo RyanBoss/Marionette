@@ -5,7 +5,8 @@ App.addRegions({
 
 App.addInitializer(function (options) {
     App.content.show(new ContentView());
-})
+});
+
 $().ready(function () {
     App.start();
 
